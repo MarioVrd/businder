@@ -1,0 +1,49 @@
+$primary-color: #2091F9
+$dark-color: #374754
+$light-color: #fff
+$text-color: #374754
+$font-stack: 'Poppins', sans-serif
+
+%flex
+  display: flex
+  align-items: center
+
+@mixin flexCenter
+  @extend %flex
+  justify-content: center
+
+@mixin flexColumnCenter
+  @extend %flex
+  flex-direction: column
+  justify-content: space-around
+
+@mixin mq($size)
+  @media only screen and (min-width: $size)
+    @content
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html,
+body
+  color: $text-color
+  min-height: 100vh
+  font-family: $font-stack
+  font-size: clamp(16px, 1.5vw, 18px)
+
+input
+  font-family: $font-stack
+
+a
+  text-decoration: none
+  color: $primary-color
+
+h1,
+h2
+  line-height: 1.1
+
+img
+  display: block
+  max-width: 100%

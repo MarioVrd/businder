@@ -1,0 +1,40 @@
+.text-center
+  text-align: center
+
+.container
+  width: 90vw
+  max-width: 1400px
+  margin: 0 auto
+
+.btn
+  display: inline-block
+  padding: 0.85em 1.75em
+  border: none
+  outline: none
+  border-radius: 2rem
+  font-family: $font-stack
+  font-size: 0.9rem
+  line-height: 1
+  cursor: pointer
+
+  &--primary
+    background-color: $primary-color
+    color: $light-color
+
+  &--light
+    background-color: $light-color
+    color: $primary-color
+
+  &--block
+    display: block
+    width: 100%
+
+  &:hover,
+  &:focus
+    animation: pulse 400ms ease-in-out infinite alternate
+
+@keyframes pulse
+  from
+    transform: scale(1)
+  to
+    transform: scale(1.05)

@@ -1,0 +1,85 @@
+.nav
+  @extend %flex
+  justify-content: space-between
+  padding: 1rem 0
+
+  a
+    color: $light-color
+
+  ul
+    list-style: none
+
+  &__list
+    display: none
+    padding: 3rem 0
+    height: 100vh
+    width: 100vw
+    background-color: $dark-color
+    position: absolute
+    top: 0
+    left: 0
+    @include flexColumnCenter
+
+  &__socials
+    @extend %flex
+
+  &__icon
+    font-size: 1.1em
+
+  &__icon + &__icon
+    margin-left: 1rem
+
+  &__toggle
+    height: 30px
+    width: 30px
+    background: none
+    outline: none
+    position: relative
+    border: none
+    cursor: pointer
+
+  &__hamburger
+    position: absolute
+    right: 0
+    height: 2px
+    width: 21px
+    background-color: $light-color
+    transform-origin: right
+
+    &::before,
+    &::after
+      content: ''
+      position: absolute
+      right: 0
+      height: 2px
+      background-color: $light-color
+      transform-origin: right
+
+    &::before
+      width: 30px
+      top: -8px
+
+    &::after
+      width: 15px
+      bottom: -8px
+
+  &__toggle:hover,
+  &__toggle:focus
+    .nav__hamburger
+      animation: pulseX 700ms ease-in-out infinite alternate
+
+      &::before
+        animation: pulseX 700ms 100ms ease-in-out infinite alternate
+
+      &::after
+        animation: pulseX 700ms 200ms ease-in-out infinite alternate
+
+@keyframes pulseX
+  0%
+    transform: scaleX(1)
+  30%
+    transform: scaleX(1.1)
+  70%
+    transform: scaleX(0.8)
+  100%
+    transform: scaleX(1)
