@@ -443,6 +443,8 @@ img {
   border: 1px solid #eee;
   background-color: #eee;
   outline: none;
+  display: inline-block;
+  margin-bottom: 1rem;
 }
 
 .subscribe__input:focus {
@@ -571,13 +573,8 @@ img {
 .card--primary {
   --bg-color: #2091F9;
   --txt-color: #fff;
-}
-
-@media only screen and (min-width: 840px) {
-  .card--primary {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .card__title {
