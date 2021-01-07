@@ -20,6 +20,7 @@ body {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   font-size: clamp(16px, 1.5vw, 18px);
+  overflow-x: hidden;
 }
 
 input {
@@ -174,6 +175,10 @@ img {
   position: absolute;
   top: 0;
   left: 0;
+  -webkit-transition: -webkit-clip-path 300ms ease-out;
+  transition: -webkit-clip-path 300ms ease-out;
+  transition: clip-path 300ms ease-out;
+  transition: clip-path 300ms ease-out, -webkit-clip-path 300ms ease-out;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -181,6 +186,19 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.nav__list.open {
+  -webkit-clip-path: circle(150% at top right);
+          clip-path: circle(150% at top right);
+  opacity: 1;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  z-index: 10;
+}
+
+.nav__list.open .nav__item {
+  opacity: 1 !important;
 }
 
 @media only screen and (min-width: 768px) {
@@ -197,8 +215,18 @@ img {
     padding: 0;
     position: inherit;
   }
-  .nav__list .nav__item {
+}
+
+.nav__item {
+  -webkit-transition: opacity 200ms 200ms ease-in;
+  transition: opacity 200ms 200ms ease-in;
+  opacity: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav__item {
     margin-right: 1.5rem;
+    opacity: 1;
   }
 }
 
@@ -218,6 +246,7 @@ img {
   position: relative;
   border: none;
   cursor: pointer;
+  z-index: 20;
 }
 
 @media only screen and (min-width: 768px) {
@@ -384,6 +413,7 @@ img {
 
 .organize {
   margin-bottom: 4rem;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 768px) {
@@ -421,6 +451,7 @@ img {
 .newsletter {
   text-align: center;
   padding-bottom: 2rem;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 768px) {

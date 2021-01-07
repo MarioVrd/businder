@@ -18,7 +18,19 @@
     position: absolute
     top: 0
     left: 0
+    transition: clip-path 300ms ease-out
     @include flexColumnCenter
+
+    &.open
+      clip-path: circle(150% at top right)
+      opacity: 1
+      justify-content: space-around
+      z-index: 10
+
+      .nav__item
+        opacity: 1!important
+
+      & + .nav__toggle
 
     @include mq(768px)
       clip-path: unset
@@ -29,8 +41,13 @@
       padding: 0
       position: inherit
 
-      .nav__item
-        margin-right: 1.5rem
+  &__item
+    transition: opacity 200ms 200ms ease-in
+    opacity: 0
+
+    @include mq(768px)
+      margin-right: 1.5rem
+      opacity: 1
 
   &__socials
     @extend %flex
@@ -49,6 +66,7 @@
     position: relative
     border: none
     cursor: pointer
+    z-index: 20
 
     @include mq(768px)
       display: none
