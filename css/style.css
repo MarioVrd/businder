@@ -106,7 +106,7 @@ img {
 }
 
 .section-title {
-  max-width: 30ch;
+  max-width: 35ch;
   margin-top: 2rem;
   margin-bottom: 2rem;
   font-weight: 500;
@@ -118,13 +118,31 @@ img {
 }
 
 .section-intro {
-  max-width: 30ch;
+  max-width: 35ch;
   margin-bottom: 2rem;
 }
 
 .section-intro--center {
   margin: 2rem auto;
   text-align: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  .section-intro {
+    max-width: 40ch;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .nav {
@@ -143,7 +161,8 @@ img {
 }
 
 .nav__list {
-  display: none;
+  -webkit-clip-path: circle(0% at top right);
+          clip-path: circle(0% at top right);
   padding: 3rem 0;
   height: 100vh;
   width: 100vw;
@@ -158,6 +177,25 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav__list {
+    -webkit-clip-path: unset;
+            clip-path: unset;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    background: none;
+    height: auto;
+    width: auto;
+    padding: 0;
+    position: inherit;
+  }
+  .nav__list .nav__item {
+    margin-right: 1.5rem;
+  }
 }
 
 .nav__icon {
@@ -176,6 +214,12 @@ img {
   position: relative;
   border: none;
   cursor: pointer;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+  }
 }
 
 .nav__hamburger {
@@ -287,9 +331,23 @@ img {
   text-align: center;
 }
 
+@media only screen and (min-width: 768px) {
+  .features-grid {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(20ch, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+}
+
 .feature {
   margin-bottom: 3rem;
   font-size: .95em;
+  -webkit-box-pack: start !important;
+      -ms-flex-pack: start !important;
+          justify-content: flex-start !important;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -301,6 +359,7 @@ img {
 
 .feature__icon {
   margin-bottom: 1em;
+  height: 50px;
 }
 
 .feature__title {
@@ -316,6 +375,12 @@ img {
 
 .organize {
   margin-bottom: 4rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .organize {
+    padding: 4rem 0;
+  }
 }
 
 .organize .section-title,
@@ -347,6 +412,20 @@ img {
 .newsletter {
   text-align: center;
   padding-bottom: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .newsletter {
+    text-align: left;
+  }
+  .newsletter__content {
+    padding-left: 4rem;
+  }
+  .newsletter__image {
+    max-height: 400px;
+    -ms-grid-column-align: center;
+        justify-self: center;
+  }
 }
 
 .newsletter__subtitle {
@@ -400,11 +479,17 @@ img {
 
 .partner__name {
   margin-bottom: 1rem;
+  font-size: .8em;
 }
 
 .testimonials {
   text-align: center;
   padding-bottom: 2rem;
+}
+
+.testimonial {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .testimonial__image {
@@ -442,6 +527,7 @@ img {
 }
 
 .card-grid {
+  padding-top: 3rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -449,6 +535,18 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (min-width: 840px) {
+  .card-grid {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 
 .card {
@@ -463,9 +561,23 @@ img {
   font-size: .9em;
 }
 
+@media only screen and (min-width: 840px) {
+  .card {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+  }
+}
+
 .card--primary {
   --bg-color: #2091F9;
   --txt-color: #fff;
+}
+
+@media only screen and (min-width: 840px) {
+  .card--primary {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
 }
 
 .card__title {

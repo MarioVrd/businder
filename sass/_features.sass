@@ -1,15 +1,22 @@
 .features
   text-align: center
 
-.feature-grid
+.features-grid
+  @include mq(768px)
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr))
+    gap: 1rem
+    padding-top: 2rem
 
 .feature
   margin-bottom: 3rem
   font-size: .95em
+  justify-content: flex-start!important
   @include flexColumnCenter
 
   &__icon
     margin-bottom: 1em
+    height: 50px
 
   &__title
     margin-bottom: 1em

@@ -2,6 +2,16 @@
   text-align: center
   padding-bottom: 2rem
 
+  @include mq(768px)
+    text-align: left
+
+    &__content
+      padding-left: 4rem
+
+    &__image
+      max-height: 400px
+      justify-self: center
+
   &__subtitle,
     font-size: .9rem
 

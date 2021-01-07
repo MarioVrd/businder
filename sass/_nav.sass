@@ -10,7 +10,7 @@
     list-style: none
 
   &__list
-    display: none
+    clip-path: circle(0% at top right)
     padding: 3rem 0
     height: 100vh
     width: 100vw
@@ -19,6 +19,18 @@
     top: 0
     left: 0
     @include flexColumnCenter
+
+    @include mq(768px)
+      clip-path: unset
+      flex-direction: row
+      background: none
+      height: auto
+      width: auto
+      padding: 0
+      position: inherit
+
+      .nav__item
+        margin-right: 1.5rem
 
   &__socials
     @extend %flex
@@ -37,6 +49,9 @@
     position: relative
     border: none
     cursor: pointer
+
+    @include mq(768px)
+      display: none
 
   &__hamburger
     position: absolute
