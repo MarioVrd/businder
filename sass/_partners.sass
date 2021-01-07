@@ -1,0 +1,21 @@
+.partners
+  padding-bottom: 2rem
+
+.partners-grid
+  @extend %flex
+  flex-wrap: wrap
+
+.partner
+  flex: 1 0 200px
+  text-align: center
+  @extend %flex
+  flex-direction: column
+  margin-bottom: 2rem
+  padding: 1rem
+
+  &__logo
+    height: 50px
+    object-fit: contain
+
+  &__name
+    margin-bottom: 1rem

@@ -1,7 +1,9 @@
 $primary-color: #2091F9
-$dark-color: #374754
+$dark-color: #252B42
 $light-color: #fff
+$light-color-300: #eee
 $text-color: #374754
+$text-color-300: #666
 $font-stack: 'Poppins', sans-serif
 
 %flex
@@ -15,7 +17,7 @@ $font-stack: 'Poppins', sans-serif
 @mixin flexColumnCenter
   @extend %flex
   flex-direction: column
-  justify-content: space-around
+  justify-content: center
 
 @mixin mq($size)
   @media only screen and (min-width: $size)
