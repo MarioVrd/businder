@@ -5,9 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=PT+Serif:wght@400;700&family=Poppins:wght@300;400;500;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
     crossorigin="anonymous" />
@@ -39,7 +37,17 @@
       </nav>
 
       <div class="hero">
-        <h1 class="hero__title">Time management is made easy with Businder</h1>
+        <div class="title-wrapper">
+          <div class="overflow--hidden">
+            <h1 class="hero__title">Time management is</h1>
+          </div>
+          <div class="overflow--hidden">
+            <h1 class="hero__title">made easy with</h1>
+          </div>
+          <div class="overflow--hidden">
+            <h1 class="hero__title">Businder</h1>
+          </div>
+        </div>
         <p class="hero__description">
           Most calendars are designed for basic needs. Businder is designed for business
           people.
@@ -244,6 +252,10 @@
       Copyright &copy; All rights reserved.
     </p>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
+  <script src="./js/animations.js"></script>
 </body>
 
 </html>
